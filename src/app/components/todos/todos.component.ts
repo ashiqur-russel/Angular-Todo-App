@@ -16,6 +16,8 @@ export class TodosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    //Array of list
     this.todos=[
       {
         content:'First Todo',
@@ -28,7 +30,7 @@ export class TodosComponent implements OnInit {
 
     ]
   }
-
+  // Completed functionality 
   toggleDone(id: number){
     this.todos?.map((v,i)=>{
         if(i==id) v.completed=!v.completed; v;
@@ -36,11 +38,12 @@ export class TodosComponent implements OnInit {
         return
     })
   }
-
+  //Delete functionality
   deleteTodo(id: number){
     this.todos=this.todos?.filter((v,i)=>i!==id);
   }
 
+    //Add functionality
   addTodo(){
     this.todos?.push({
       content:this.inputTodo,
